@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+    
+        <!-- Connection Properties -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/demohibernate</property>
+        <property name="connection.user">root</property>
+        <property name="connection.password">0000</property>
+        
+        <!-- Hibernate Properties -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        
+        <!-- Mapping -->
+        <mapping class="CRUDOperations.Director"/>
+        
+        <!-- Additional Mappings -->
+        <!-- Adjust these mappings if they are still needed or remove them if not -->
+        <mapping class="HQLDemo.Movies"/> 
+        <mapping class="HCQLDemo.Cricketer"/>
+        
+         <!-- Entity class mappings -->
+        <mapping class="InheritanceMapping.Person"/>
+        <mapping class="InheritanceMapping.Teacher"/>
+        <mapping class="InheritanceMapping.Scholar"/>
+        
+    </session-factory>
+
+</hibernate-configuration>
